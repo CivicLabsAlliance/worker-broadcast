@@ -1,0 +1,15 @@
+# wrangler.toml
+
+name = "broadcast-emails"
+workers_dev = true
+compatibility_date = "2025-06-23"
+main = "src/index.js"
+node_compat = true
+
+#account_id = "${CLOUDFLARE_ACCOUNT_ID}"
+
+
+
+# Vars
+#[vars]
+#  EMAIL_ROUTING = "${EMAIL_ROUTING}"

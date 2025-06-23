@@ -1,0 +1,31 @@
+name: ☁️ Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy ☁️👷
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm ci
+
+      #- name: Manage Secrets
+      #  run: |
+      #    sed -i 's/\${CLOUDFLARE_ACCOUNT_ID}/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/g' wrangler.toml
+      #    sed -i 's/\${EMAIL_ROUTING}/${{ secrets.EMAIL_ROUTING }}/g' wrangler.toml
+
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          secrets: |
+            EMAIL_ROUTING
+        env:
+          EMAIL_ROUTING: ${{ secrets.EMAIL_ROUTING }}

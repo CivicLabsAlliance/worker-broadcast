@@ -1,0 +1,15 @@
+{
+  "name": "worker-broadcast",
+  "version": "1.0.0",
+  "description": "This catches contact form submissions and forwards them to a special email.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wrangler": "^3.67.1"
+  }
+}
