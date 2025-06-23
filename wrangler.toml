@@ -8,6 +8,12 @@ node_compat = true
 
 #account_id = "${CLOUDFLARE_ACCOUNT_ID}"
 
+# wrangler.toml (wrangler v3.88.0^)
+[observability.logs]
+enabled = false
+
+
+
 
 
 # Vars
